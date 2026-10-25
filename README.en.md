@@ -1,0 +1,66 @@
+# dsh-doc-review
+
+[简体中文](README.md) · English
+
+Review DeepSeek Harness responses with inline annotations, document reading, comment threads, and text revisions, then bring a reading summary back to the main conversation.
+
+## Features
+
+- Select passages in an assistant response and add comments, agreement, or disagreement. Send the collected annotations for a point-by-point response or a revised answer.
+- Open a response in document mode to highlight passages and discuss them in comment threads. Ask the Agent to revise the document text, with undo support.
+- Bring highlights and discussions back to the main conversation as reference material attached to your next message, including the full revised document when its text has changed.
+
+![Inline annotations](https://raw.githubusercontent.com/nickzhangcomes/dsh-doc-review/v0.1.0/docs/screenshots/1-conversation.png)
+
+![Document mode](https://raw.githubusercontent.com/nickzhangcomes/dsh-doc-review/v0.1.0/docs/screenshots/2-docmode.png)
+
+## Install
+
+Requires DSH `>=0.2.1-rc.3`. The tested host version is `0.2.1-rc.3`; the desktop window interaction fix in `0.1.1` was verified on macOS. Windows and Linux desktop behavior has not been independently verified.
+
+```bash
+# Desktop
+dsh plugin --profile desktop add dsh-doc-review@latest
+
+# Web
+dsh plugin --profile web add dsh-doc-review@latest
+```
+
+Use the profile name configured on your machine. Fully quit and reopen the desktop app after installation or an update; restart or reload your web host as appropriate.
+
+Prebuilt archives are also available from [GitHub Releases](https://github.com/nickzhangcomes/dsh-doc-review/releases). Uninstall with `dsh plugin --profile desktop remove dsh-doc-review`.
+
+The plugin UI is currently in Chinese. It uses internal DSH interfaces, so future host releases may require a plugin update.
+
+## Data access and model calls
+
+- The plugin reads the response being reviewed and selected passages. Annotations, document copies, comments, revisions, preferences, and pending reading references are stored in the DSH page environment's `localStorage`. The plugin does not provide cross-device sync.
+- Sending annotations submits the selected text, notes, overall feedback, and current composer draft through DSH's normal message flow.
+- Requesting an Agent reply in document mode forks the parent conversation. The child retains conversation context and receives the current document, selected passage, and comment. The full document is sent again after revisions. Calls use the model service configured in DSH and consume tokens, potentially incurring charges.
+- Turning off a comment's Agent toggle defers a model call; `@Agent` still requests a reply. Earlier comments may be included as context when you later request an Agent reply in that document.
+- Bringing a reading back to the main conversation attaches its highlights and discussions to the composer, plus the full revised document if its text has changed. They are sent with your next message and can be removed before sending.
+- Leaving document mode attempts to stop and archive the plugin-created child session. Cleanup is retried on a later load if necessary. Archiving does not delete history.
+
+The plugin does not directly read or write workspace files, request a separate API key, or operate its own upload or analytics service. Agent tools and permissions remain governed by DSH's configuration and authorization flow. Document rendering uses DSH's Markdown components; external images and similar resources may still cause network requests.
+
+Uninstalling does not erase plugin records already stored in `localStorage` or messages already sent through DSH. Unsent chat annotations can be deleted or cleared, and pending reading references can be removed from the composer. DSH manages conversation history.
+
+## Marketplace assets
+
+[screenshots.json](screenshots.json) lists four demonstration images in display order. See [submission materials](docs/marketplace/README.md) for descriptions and listing drafts. A draft is not a confirmed marketplace listing.
+
+## Development
+
+With Node.js 20 or newer:
+
+```bash
+npm ci
+npm run build
+npm pack
+```
+
+`npm pack` rebuilds the distributable files before packaging.
+
+## License
+
+MIT
