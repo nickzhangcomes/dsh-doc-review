@@ -45,7 +45,17 @@
 
 需要 dsh **0.2.1-rc.3** 或更新版本；当前验证版本为 **0.2.1-rc.3**。
 
-从 GitHub 安装：
+从 npm 安装：
+
+```bash
+# 桌面版
+dsh plugin --profile desktop add dsh-doc-review
+
+# 网页版
+dsh plugin --profile web add dsh-doc-review
+```
+
+也可以从 GitHub 安装：
 
 ```bash
 # 桌面版
@@ -61,7 +71,7 @@ dsh plugin --profile web add github:nickzhangcomes/dsh-doc-review
 dsh plugin --profile desktop add file:/path/to/dsh-doc-review-0.1.0.tgz
 ```
 
-将 `/path/to/` 替换为安装包所在目录的完整路径。npm 发布后，可使用 `dsh plugin --profile desktop add dsh-doc-review` 按包名安装。
+将 `/path/to/` 替换为安装包所在目录的完整路径。
 
 安装后**重启桌面版**（或刷新网页）。profile 名称以你本机为准，可以用 `ls ~/.dsh/profiles` 查看。
 
