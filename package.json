@@ -1,0 +1,71 @@
+{
+  "name": "dsh-doc-review",
+  "version": "0.1.0",
+  "description": "把模型的长回复当成稿子来审：原地批注（评论/认可/反对）后一次发回；或以文档模式阅读，高亮、评论线程、让 Agent 直接改正文，读完带回主会话。A DeepSeek Harness plugin.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "dsh",
+    "deepseek-harness",
+    "review",
+    "annotation",
+    "document",
+    "comment"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-ui-slots",
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-api-session-controller",
+        "@deepseek-ai/dsh-client-ui-input-trigger",
+        "@deepseek-ai/dsh-api-workspace-controller"
+      ]
+    }
+  },
+  "engines": {
+    "dsh": ">=0.2.1-rc.3"
+  },
+  "scripts": {
+    "build": "node build.mjs",
+    "prepack": "npm run build"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nickzhangcomes/dsh-doc-review.git"
+  },
+  "homepage": "https://github.com/nickzhangcomes/dsh-doc-review#readme",
+  "bugs": {
+    "url": "https://github.com/nickzhangcomes/dsh-doc-review/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

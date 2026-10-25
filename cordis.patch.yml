@@ -1,0 +1,4 @@
+# Bundle patch layer: `dsh plugin add` applies this to the profile, enabling the plugin on install.
+- insert:
+    - id: ui-review
+      name: 'dsh-doc-review'
