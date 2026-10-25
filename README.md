@@ -68,7 +68,7 @@ dsh plugin --profile web add github:nickzhangcomes/dsh-doc-review
 也可以从 [Releases](https://github.com/nickzhangcomes/dsh-doc-review/releases) 下载 `.tgz` 安装包，再运行：
 
 ```bash
-dsh plugin --profile desktop add file:/path/to/dsh-doc-review-0.1.0.tgz
+dsh plugin --profile desktop add file:/path/to/dsh-doc-review-0.1.1.tgz
 ```
 
 将 `/path/to/` 替换为安装包所在目录的完整路径。
@@ -76,6 +76,17 @@ dsh plugin --profile desktop add file:/path/to/dsh-doc-review-0.1.0.tgz
 安装后**重启桌面版**（或刷新网页）。profile 名称以你本机为准，可以用 `ls ~/.dsh/profiles` 查看。
 
 卸载：`dsh plugin --profile desktop remove dsh-doc-review`
+
+## 0.1.1 更新
+
+- 修复安装插件后桌面窗口无法通过标题栏拖动、双击缩放的问题。批注浮层不再覆盖整扇窗口的原生拖动区域。
+- 文档模式顶部空白区域也支持拖动窗口；按钮和正文仍可正常点击、选择。
+
+已安装 0.1.0 的用户可以运行下面的命令，然后**完全退出并重新打开桌面版**：
+
+```bash
+dsh plugin --profile desktop add dsh-doc-review@latest
+```
 
 ## 说明
 

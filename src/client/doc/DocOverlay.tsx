@@ -385,7 +385,7 @@ function DocView({ open, deps }: { open: OpenDoc; deps: AgentDeps }) {
       onPaste={isolate}
       onCopy={isolate}
     >
-      <header className="dsd-bar">
+      <header className="dsd-bar" data-window-drag>
         <button type="button" className="dsd-back" onClick={requestExit}>
           <Icon name="back" size={16} width={2} />
           返回对话

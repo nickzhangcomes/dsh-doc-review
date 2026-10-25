@@ -365,7 +365,13 @@ export const ReviewLayer = memo(function ReviewLayer({ review, painter, trackDoc
   let margin: JSX.Element | null = null
   if (layout) {
     const c = layout.clip
-    const clip = 'inset(' + Math.max(0, c.top) + 'px ' + Math.max(0, window.innerWidth - c.right) + 'px ' + Math.max(0, window.innerHeight - c.bottom) + 'px ' + Math.max(0, c.left) + 'px)'
+    const top = Math.max(0, c.top)
+    const right = Math.min(window.innerWidth, c.right)
+    const bottom = Math.min(window.innerHeight, c.bottom)
+    const left = Math.max(0, c.left)
+    // The host has no native hit-test area. Pixel coordinates keep clipping its
+    // fixed-position children to the chat viewport without a full-window box.
+    const clip = `polygon(${left}px ${top}px,${right}px ${top}px,${right}px ${bottom}px,${left}px ${bottom}px)`
     margin = (
       <div className="dsr-margin" style={{ clipPath: clip }}>
         {layout.placements.map((pl) => {

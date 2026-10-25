@@ -1,6 +1,6 @@
 {
   "name": "dsh-doc-review",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "把模型的长回复当成稿子来审：原地批注（评论/认可/反对）后一次发回；或以文档模式阅读，高亮、评论线程、让 Agent 直接改正文，读完带回主会话。A DeepSeek Harness plugin.",
   "type": "module",
   "main": "lib/index.js",

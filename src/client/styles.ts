@@ -32,8 +32,16 @@ body{
 [data-kind='agree']{--dsr-accent:#24a068}
 [data-kind='disagree']{--dsr-accent:#e5484d}
 
+/*
+ * Desktop marks body-level portals as app-region:no-drag. pointer-events:none
+ * does not exclude their rectangles from Electron's native drag hit testing.
+ * Keep the portal hosts empty-sized; their fixed-position children still use
+ * viewport coordinates and remain visible/clickable outside the hosts.
+ */
+.dsr-float-root,.dsr-margin-host,.dsr-margin,.dsr-bar-host,.dsd-host{position:fixed;top:0;left:0;width:0;height:0;overflow:visible;pointer-events:none}
+
 /* Selection toolbar. */
-.dsr-float-root{position:fixed;inset:0;pointer-events:none;z-index:80}
+.dsr-float-root{z-index:80}
 .dsr-float-root>*{pointer-events:auto}
 .dsr-toolbar{position:fixed;display:flex;align-items:center;gap:2px;height:34px;padding:0 4px;border-radius:8px;border:1px solid var(--dsr-border);background:var(--dsr-surface);box-shadow:var(--dsr-shadow-lg);animation:dsr-pop .12s ease-out}
 .dsr-tb-btn{display:inline-flex;align-items:center;justify-content:center;gap:5px;height:26px;min-width:26px;padding:0 5px;border:none;border-radius:6px;background:none;color:var(--dsr-text-2);cursor:pointer;font:inherit;font-size:13px;line-height:1}
@@ -44,8 +52,7 @@ body{
 @keyframes dsr-pop{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:none}}
 
 /* Margin cards. */
-.dsr-margin-host,.dsr-bar-host{position:fixed;inset:0;pointer-events:none;z-index:60}
-.dsr-margin{position:fixed;inset:0;pointer-events:none}
+.dsr-margin-host,.dsr-bar-host{z-index:60}
 .dsr-slot{position:fixed;pointer-events:auto;transition:top .18s ease,left .18s ease}
 .dsr-card{position:relative;box-sizing:border-box;padding:8px 10px 8px 12px;border:1px solid var(--dsr-border);border-radius:8px;background:var(--dsr-surface);box-shadow:var(--dsr-shadow);cursor:default}
 .dsr-card::before{content:'';position:absolute;left:-1px;top:10px;bottom:10px;width:3px;border-radius:0 3px 3px 0;background:var(--dsr-accent);opacity:.9}
@@ -101,8 +108,8 @@ body{
 .dsd-docbtn:hover{background:var(--dsd-hover);color:var(--dsr-text)}
 .dsd-badge{margin-left:8px;font-size:12px;color:var(--dsr-text-3);white-space:nowrap}
 
-.dsd-host{position:relative;z-index:75}
-.dsd-root{position:fixed;display:flex;flex-direction:column;background:var(--dsr-surface);color:var(--dsr-text);z-index:75;font-size:14px;box-shadow:-1px 0 0 var(--dsd-line)}
+.dsd-host{z-index:75}
+.dsd-root{position:fixed;pointer-events:auto;display:flex;flex-direction:column;background:var(--dsr-surface);color:var(--dsr-text);z-index:75;font-size:14px;box-shadow:-1px 0 0 var(--dsd-line)}
 .dsd-root button{font:inherit;cursor:pointer}
 .dsd-spacer{flex:1}
 .dsd-bar{height:52px;flex:none;display:flex;align-items:center;gap:12px;padding:0 16px 0 12px;border-bottom:.5px solid var(--dsd-line)}
