@@ -1,19 +1,19 @@
 # 市场投稿资料
 
-以下是作者资料、投稿记录和自动发现说明。规则及提交状态核对日期：2026-10-25；提交申请不等于审核通过。
+以下是作者资料、投稿记录和自动发现说明。dsh-market 状态更新于 2026-10-26 06:50 UTC；其他市场保留 2026-10-25 的核对记录。提交申请不等于审核通过。
 
 ## 投稿状态
 
-| 市场 | 2026-10-25 状态 | 后续处理 |
+| 市场 | 最近记录 | 后续处理 |
 | --- | --- | --- |
 | Open Plugin Market | [Issue #76](https://github.com/polang233/dsh-plugin-index/issues/76) 已提交 | 等维护者审核 |
 | deepseekharnessplugins.com | [PR #40](https://github.com/cccakeee/awesome-dsh-plugins/pull/40) 已提交 | 等维护者合并，随后网站同步 |
 | DSHDesk | [Issue #92](https://github.com/majiayu000/dsh-plugin-registry/issues/92) 已提交 | 等审核/定时同步；也支持 Topic 自动发现 |
 | DeepSeek 1024 | [PR #690](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/690) 静态检查通过且已合并 | 网站目录同步中；npm 安装识别由市场自动采集 |
-| dsh-market | 投稿条目已准备，仓库尚未满 24 小时 | 已安排纽约时间 2026-10-26 02:40（北京 14:40）自动提交 |
+| dsh-market | [PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552) 于 2026-10-26 正式提交，自动检查运行中 | 等维护者审核、合并；一次性自动投稿任务已完成并删除 |
 | DSHFind | 已具备公开仓库和 `dsh-plugin` Topic | 自动发现；两轮扫描后仍未收录才补交 Issue |
 
-以上申请均可由维护者的 GitHub 账号提交，目前没有必须作者亲自填表的剩余入口。已安排一次 DSHFind 检查：纽约时间 2026-10-26 23:20（北京 10 月 27 日 11:20），若精确仓库仍未收录，按当时规则去重后补交 Issue。两项计划均为作者本机 Codex 中的一次性任务，执行结果以后续实际回执为准。
+以上申请均可由维护者的 GitHub 账号提交，目前没有必须作者亲自填表的剩余入口。dsh-market 延后投稿已完成。仍保留一次 DSHFind 检查：纽约时间 2026-10-26 23:20（北京 10 月 27 日 11:20），若精确仓库仍未收录，按当时规则去重后补交 Issue。剩余检查是作者本机 Codex 的一次性任务，执行结果以实际回执为准。
 
 市场中可能存在同名项目，应使用完整仓库标识 **`nickzhangcomes/dsh-doc-review`** 确认本插件，不能仅凭包名判断已收录。
 
@@ -54,8 +54,9 @@ English summary: Review DeepSeek Harness responses with inline annotations, docu
 
 - 提交位置：[awesome-dsh-plugin/awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
 - [贡献指南](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/main/contributing.md)
-- 将 [awesome-dsh-plugin.yml](awesome-dsh-plugin.yml) 作为 `data/plugins/nickzhangcomes__dsh-doc-review.yml` 加入目录仓库并提交 PR；不要手工修改其生成的 README。
-- 当前规则要求目标仓库创建满 1 天。仓库创建于 `2026-10-25T06:29:57Z`，满 24 小时为纽约时间 **2026-10-26 02:29:57**，应在此之后提交并重新核对当时规则。
+- [PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552) 已提交：从最新上游 `main`（`a7ae7b2`）建立个人 Fork 的 `add-dsh-doc-review` 分支，仅新增 [awesome-dsh-plugin.yml](awesome-dsh-plugin.yml) 对应的 `data/plugins/nickzhangcomes__dsh-doc-review.yml`，没有提交生成的 README。
+- 已重新核对当前贡献规则及 open/closed PR，没有本仓库的已有条目或重复申请。仓库创建于 `2026-10-25T06:29:57Z`，PR 创建于 `2026-10-26T06:50:19Z`，当时年龄为 **24 小时 20 分 22 秒**，满足 1 天门槛。
+- 本地使用目录自带 `validateEntries` 校验通过，双语 README 生成和站点构建通过（6,897 条目、2 种语言）。GitHub 自动检查运行中，正式收录仍待维护者审核；不自行合并。
 - npm 映射由目录自动读取发布包的 `repository` 字段；条目无需添加 `npm:` 字段。
 
 ## deepseekharnessplugins.com
