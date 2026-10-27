@@ -55,7 +55,9 @@
 
 桌面版推荐在 **插件 → 添加插件** 中输入 `dsh-markup` 安装，也可输入 GitHub 地址或本地 `.tgz` 完整路径。下方桌面 CLI 命令需要桌面版提供的命令行入口；若提示 `desktop` profile 由 Electron 管理，请使用应用内安装。
 
-从 npm 安装：
+**发布状态（2026-10-27）：** 0.2.0 安装包已在 [GitHub Release](https://github.com/nickzhangcomes/dsh-markup/releases/tag/v0.2.0) 发布；新 npm 包等待作者重新登录后发布，当前请使用下方 GitHub 或本地安装方式。
+
+从 npm 安装（新包发布后）：
 
 ```bash
 # 桌面版
