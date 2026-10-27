@@ -53,6 +53,8 @@
 
 需要 dsh **0.2.1-rc.3** 或更新版本；当前验证版本为 **0.2.1-rc.3**。
 
+桌面版推荐在 **插件 → 添加插件** 中输入 `dsh-markup` 安装，也可输入 GitHub 地址或本地 `.tgz` 完整路径。下方桌面 CLI 命令需要桌面版提供的命令行入口；若提示 `desktop` profile 由 Electron 管理，请使用应用内安装。
+
 从 npm 安装：
 
 ```bash
@@ -87,7 +89,7 @@ dsh plugin --profile desktop add file:/path/to/dsh-markup-0.2.0.tgz
 
 ## 0.2.0 更名与迁移
 
-已安装旧包 `dsh-doc-review` 的用户，请在同一个 profile 中移除旧包，再安装新包，避免重复加载：
+已安装旧包 `dsh-doc-review` 的用户，请在同一个 profile 中移除旧包，再安装新包，避免重复加载。桌面版可直接在「插件」页卸载旧包，再添加 `dsh-markup`；支持桌面管理的 CLI 或网页版也可使用下列命令：
 
 ```bash
 # 桌面版；网页版请把 desktop 换成 web

@@ -20,6 +20,8 @@ Review DeepSeek Harness responses with inline annotations, document reading, com
 
 Requires DSH `>=0.2.1-rc.3`. The tested host version is `0.2.1-rc.3`; the desktop window interaction fix in `0.1.1` was verified on macOS. Windows and Linux desktop behavior has not been independently verified.
 
+For Desktop, use **Plugins → Add plugin** and enter `dsh-markup`, a GitHub URL, or the full path to a release archive. The desktop CLI commands below require the CLI supplied by the desktop app; if your CLI says the `desktop` profile is managed by Electron, use the in-app installer.
+
 ```bash
 # Desktop
 dsh plugin --profile desktop add dsh-markup@latest
@@ -36,7 +38,7 @@ The plugin UI is currently in Chinese. It uses internal DSH interfaces, so futur
 
 ## Upgrade from dsh-doc-review
 
-Use the same profile, remove the old package, and install the new name. Do not enable both packages together.
+Use the same profile, remove the old package, and install the new name. On Desktop, this can be done in the Plugins page. Do not enable both packages together.
 
 ```bash
 # Replace desktop with web for a web profile.

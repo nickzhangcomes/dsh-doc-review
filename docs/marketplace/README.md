@@ -1,6 +1,6 @@
 # DSH Markup 市场资料与更名记录
 
-2026-10-27：本项目由 `dsh-doc-review` 更名为 **`dsh-markup`**，展示名为 **DSH Markup · 对话批注与文档审阅**。这是同一项目的延续，旧 GitHub 地址重定向到新仓库。新版本为 `0.2.0`；发布与目录更名正在跟进，以下记录不等于所有市场已经更新。
+2026-10-27：本项目由 `dsh-doc-review` 更名为 **`dsh-markup`**，展示名为 **DSH Markup · 对话批注与文档审阅**。这是同一项目的延续，旧 GitHub 地址重定向到新仓库。新版本为 `0.2.0`；GitHub Release 与本地构建已完成，npm 发布等待重新登录，目录更名申请已提交；提交不等于市场已上线新名。
 
 ## 项目资料
 
@@ -24,12 +24,12 @@ English summary: Review DeepSeek Harness responses with inline annotations, docu
 
 | 市场 | 原记录 | 更名处理 |
 | --- | --- | --- |
-| Open Plugin Market | [Issue #76](https://github.com/polang233/dsh-plugin-index/issues/76)，维护者已确认接收 | 跟进中 |
-| deepseekharnessplugins.com | [PR #40](https://github.com/cccakeee/awesome-dsh-plugins/pull/40)，尚在审核 | 将更新同一 PR |
-| DSHDesk | [Issue #92](https://github.com/majiayu000/dsh-plugin-registry/issues/92)，维护者已确认上线 | 跟进中 |
-| DeepSeek 1024 | [PR #690](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/690)，已合并 | 将提交条目改名 PR |
-| dsh-market | [PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552)，已于 2026-10-26 合并 | 将提交条目改名 PR |
-| DSHFind | [旧名条目](https://dshfind.com/zh/plugins/nickzhangcomes/dsh-doc-review)，已自动发现 | 核对改名同步方式 |
+| Open Plugin Market | [Issue #76](https://github.com/polang233/dsh-plugin-index/issues/76)，维护者已确认接收 | [更名资料已回复](https://github.com/polang233/dsh-plugin-index/issues/76#issuecomment-6446775249)，待维护者更新 |
+| deepseekharnessplugins.com | [PR #40](https://github.com/cccakeee/awesome-dsh-plugins/pull/40) | 已在同一 PR 更新新名和固定 Git 安装来源，解决与最新 main 的冲突；9 项测试通过，待合并 |
+| DSHDesk | [Issue #92](https://github.com/majiayu000/dsh-plugin-registry/issues/92)，旧名已上线 | [更名资料已回复](https://github.com/majiayu000/dsh-plugin-registry/issues/92#issuecomment-6446777443)，待更新生产条目 |
+| DeepSeek 1024 | [原 PR #690](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/690)，已合并 | [更名 PR #729](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/729)，静态检查通过，待维护者审核 |
+| dsh-market | [原 PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552)，已合并 | [更名 PR #9913](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9913)，本地条目校验通过，待审核 |
+| DSHFind | [旧名条目](https://dshfind.com/zh/plugins/nickzhangcomes/dsh-doc-review)，已自动发现 | [迁移 Issue #58](https://github.com/hikariming/dshfind/issues/58)，请求维护者保留历史数据并添加旧 URL 重定向 |
 
 原两项一次性投稿任务 `dsh-market` 和 `dshfind` 均已完成并删除。更名申请不重复增加第二个功能相同的条目；具体是否上线以各市场实际记录为准。
 
