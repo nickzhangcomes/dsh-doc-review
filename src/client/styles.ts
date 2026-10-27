@@ -2,7 +2,7 @@
  * Plugin stylesheet. Surfaces ride the shell's --dsw-alias tokens so light and
  * dark follow the theme; ::highlight() rules paint the in-place marks.
  */
-const TAG_ID = 'dsh-doc-review/review.css'
+const TAG_ID = 'dsh-markup/review.css'
 
 const CSS = `
 body{
@@ -237,7 +237,7 @@ body{
 export function ensureStyles(): () => void {
   if (document.querySelector('style[data-plugin-css="' + TAG_ID + '"]')) return () => {}
   const tag = document.createElement('style')
-  tag.dataset.plugin = 'dsh-doc-review'
+  tag.dataset.plugin = 'dsh-markup'
   tag.dataset.pluginCss = TAG_ID
   tag.textContent = CSS
   document.head.appendChild(tag)

@@ -1,81 +1,44 @@
-# 市场投稿资料
+# DSH Markup 市场资料与更名记录
 
-以下是作者资料、投稿记录和自动发现说明。DSHFind 收录状态核对于 2026-10-27；dsh-market 保留 2026-10-26 06:50 UTC 的投稿记录，其他市场保留 2026-10-25 的核对记录。提交申请不等于审核通过。
+2026-10-27：本项目由 `dsh-doc-review` 更名为 **`dsh-markup`**，展示名为 **DSH Markup · 对话批注与文档审阅**。这是同一项目的延续，旧 GitHub 地址重定向到新仓库。新版本为 `0.2.0`；发布与目录更名正在跟进，以下记录不等于所有市场已经更新。
 
-## 投稿状态
+## 项目资料
 
-| 市场 | 最近记录 | 后续处理 |
-| --- | --- | --- |
-| Open Plugin Market | [Issue #76](https://github.com/polang233/dsh-plugin-index/issues/76) 已提交 | 等维护者审核 |
-| deepseekharnessplugins.com | [PR #40](https://github.com/cccakeee/awesome-dsh-plugins/pull/40) 已提交 | 等维护者合并，随后网站同步 |
-| DSHDesk | [Issue #92](https://github.com/majiayu000/dsh-plugin-registry/issues/92) 已提交 | 等审核/定时同步；也支持 Topic 自动发现 |
-| DeepSeek 1024 | [PR #690](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/690) 静态检查通过且已合并 | 网站目录同步中；npm 安装识别由市场自动采集 |
-| dsh-market | [PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552) 于 2026-10-26 正式提交，自动检查运行中 | 等维护者审核、合并；一次性自动投稿任务已完成并删除 |
-| DSHFind | 已自动收录：[本项目中文详情页](https://dshfind.com/zh/plugins/nickzhangcomes/dsh-doc-review)，详情页及公开 API 均返回 HTTP 200 | 无需补交 Issue；插件类型和 npm 安装方式仍待目录识别 |
-
-以上申请均可由维护者的 GitHub 账号提交，目前没有必须作者亲自填表的剩余入口。dsh-market 延后投稿和 DSHFind 延迟检查均已完成，两项一次性任务均已删除。DSHFind 已查到精确仓库，本次没有创建 Issue；尚待审核的其他申请由对应目录维护者处理。
-
-市场中可能存在同名项目，应使用完整仓库标识 **`nickzhangcomes/dsh-doc-review`** 确认本插件，不能仅凭包名判断已收录。
-
-## 插件资料
-
-| 字段 | 内容 |
-| --- | --- |
-| 名称 / npm 包名 | `dsh-doc-review` |
-| 维护者 | `nickzhangcomes` |
-| 源码 | https://github.com/nickzhangcomes/dsh-doc-review |
-| npm | https://www.npmjs.com/package/dsh-doc-review |
-| 当前发布版本 | `0.1.1` |
-| 许可证 | MIT |
-| 宿主版本声明 | `>=0.2.1-rc.3` |
-| 已验证宿主 | DSH `0.2.1-rc.3`；`0.1.1` 的窗口拖动修复在 macOS 桌面版验收 |
-| 未独立验证 | Windows、Linux 桌面版及未来 DSH 版本 |
-| 界面语言 | 中文；提供中英文说明文档 |
-| 展示分类 | 界面增强 / UI Enhancements；兼具文档审阅功能 |
-| 截图声明 | [screenshots.json](../../screenshots.json)，4 张截图 |
+- 源码：https://github.com/nickzhangcomes/dsh-markup
+- 新 npm 包：https://www.npmjs.com/package/dsh-markup（0.2.0 发布中）
+- 原 npm 包：`dsh-doc-review@0.1.1`，新包发布确认后标注迁移提示。
+- 许可证：MIT。
+- 宿主声明：DSH `>=0.2.1-rc.3`。旧版已在 macOS DSH 0.2.1-rc.3 验证桌面拖动；Windows、Linux 未独立验证。
+- 包含 `dsh.bundle.patch`、顶层数组格式的 `cordis.patch.yml` 和预构建 `lib/`。
+- 截图：[screenshots.json](../../screenshots.json)，4 张原有演示图。
+- 迁移说明：[中文 README](../../README.md#020-更名与迁移) / [English README](../../README.en.md#upgrade-from-dsh-doc-review)。原存储键与持久化引用标识保留。
+- 数据说明：[中文 README](../../README.md#数据访问与模型调用) / [English README](../../README.en.md#data-access-and-model-calls)。模型调用经 DSH 配置的模型服务，可能消耗 token。
 
 中文简介：为 DeepSeek Harness 的模型回复添加多处批注、文档阅读、评论线程和正文修订，并将阅读摘要带回主对话。
 
 English summary: Review DeepSeek Harness responses with inline annotations, document reading, comment threads, and text revisions, then bring a reading summary back to the main conversation.
 
-桌面安装：`dsh plugin --profile desktop add dsh-doc-review@latest`
+新安装命令：`dsh plugin --profile desktop add dsh-markup@latest`；网页 profile 将 `desktop` 换成 `web`。已装旧包请先按 README 的迁移步骤处理，避免新旧包同时启用。
 
-网页安装：`dsh plugin --profile web add dsh-doc-review@latest`
+## 原收录记录与更名进度
 
-数据说明：[中文 README](../../README.md#数据访问与模型调用) / [English README](../../README.en.md#data-access-and-model-calls)。插件读取会话内容并保存本地审阅记录；请求 Agent 回复时会通过 DSH 调用配置的模型服务，传入文档和评论并消耗 token。关闭 Agent 开关的评论可能在后续提问时作为上下文发送。
+| 市场 | 原记录 | 更名处理 |
+| --- | --- | --- |
+| Open Plugin Market | [Issue #76](https://github.com/polang233/dsh-plugin-index/issues/76)，维护者已确认接收 | 跟进中 |
+| deepseekharnessplugins.com | [PR #40](https://github.com/cccakeee/awesome-dsh-plugins/pull/40)，尚在审核 | 将更新同一 PR |
+| DSHDesk | [Issue #92](https://github.com/majiayu000/dsh-plugin-registry/issues/92)，维护者已确认上线 | 跟进中 |
+| DeepSeek 1024 | [PR #690](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/690)，已合并 | 将提交条目改名 PR |
+| dsh-market | [PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552)，已于 2026-10-26 合并 | 将提交条目改名 PR |
+| DSHFind | [旧名条目](https://dshfind.com/zh/plugins/nickzhangcomes/dsh-doc-review)，已自动发现 | 核对改名同步方式 |
 
-## Open Plugin Market
+原两项一次性投稿任务 `dsh-market` 和 `dshfind` 均已完成并删除。更名申请不重复增加第二个功能相同的条目；具体是否上线以各市场实际记录为准。
 
-- [收录表单](https://github.com/polang233/dsh-plugin-index/issues/new?template=plugin-add.yml)
-- [贡献指南](https://github.com/polang233/dsh-plugin-index/blob/main/.github/CONTRIBUTING.md)
-- 可复制的标题和正文：[open-plugin-market.md](open-plugin-market.md)
+## 目录规则与投稿材料
 
-## dsh-market / awesome-dsh-plugin
+- Open Plugin Market：[资料](open-plugin-market.md)、[贡献指南](https://github.com/polang233/dsh-plugin-index/blob/main/.github/CONTRIBUTING.md)。
+- dsh-market：[条目 YAML](awesome-dsh-plugin.yml)、[贡献指南](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/main/contributing.md)。条目为 `data/plugins/nickzhangcomes__dsh-markup.yml`；不手动修改生成的 README，不添加目录自动识别的 `npm:` 字段。
+- deepseekharnessplugins.com：[贡献指南](https://github.com/cccakeee/awesome-dsh-plugins/blob/main/docs/CONTRIBUTING.zh-CN.md)，维护 CSV 后由脚本生成展示文档。
+- DeepSeek 1024：[贡献指南](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/CONTRIBUTING.md)，维护单个 JSON 条目，不手动修改生成的 README。
+- DSHFind：[自动发现规则](https://github.com/hikariming/dshfind#submit-your-plugin)。旧名首次发现时间为 `2026-10-26T03:54:50.593Z`，核对时类型和 npm 安装探测尚未得出结果。
 
-- 提交位置：[awesome-dsh-plugin/awesome-dsh-plugin](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin)
-- [贡献指南](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/blob/main/contributing.md)
-- [PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552) 已提交：从最新上游 `main`（`a7ae7b2`）建立个人 Fork 的 `add-dsh-doc-review` 分支，仅新增 [awesome-dsh-plugin.yml](awesome-dsh-plugin.yml) 对应的 `data/plugins/nickzhangcomes__dsh-doc-review.yml`，没有提交生成的 README。
-- 已重新核对当前贡献规则及 open/closed PR，没有本仓库的已有条目或重复申请。仓库创建于 `2026-10-25T06:29:57Z`，PR 创建于 `2026-10-26T06:50:19Z`，当时年龄为 **24 小时 20 分 22 秒**，满足 1 天门槛。
-- 本地使用目录自带 `validateEntries` 校验通过，双语 README 生成和站点构建通过（6,897 条目、2 种语言）。GitHub 自动检查运行中，正式收录仍待维护者审核；不自行合并。
-- npm 映射由目录自动读取发布包的 `repository` 字段；条目无需添加 `npm:` 字段。
-
-## deepseekharnessplugins.com
-
-- [提交规则](https://deepseekharnessplugins.com/zh/submit)
-- 向 [cccakeee/awesome-dsh-plugins](https://github.com/cccakeee/awesome-dsh-plugins) 对应分类提交条目，合并后由网站同步。
-- 目录现行规则以仓库内 [贡献指南](https://github.com/cccakeee/awesome-dsh-plugins/blob/main/docs/CONTRIBUTING.zh-CN.md) 为准：新增 `data/verified-plugins.csv` 条目，记录挂载证据、精确安装命令、许可证和数据流，再用 `scripts/generate_docs.py` 生成 README 与分类页。
-- 本次 PR 包含 1 行 CSV 及 4 个生成文档，目录自带 9 项测试通过；没有刷新无关目录数据。
-
-## DeepSeek 1024
-
-- [贡献规则](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/CONTRIBUTING.md)：在 `catalog/plugins/` 新增单个 JSON，包含分类和中英文简介；不修改生成的 README。
-- 本次条目通过官方静态校验，并由目标仓库自动合并。目录合并与网站同步是两个阶段。
-- 同时支持 `dsh-plugin` Topic 自动发现；PR 提供明确分类和中英文展示资料，详见[数据来源](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/blob/main/docs/plugin-discovery.md)。
-
-## 自动发现目录
-
-- [dshfind](https://github.com/hikariming/dshfind#submit-your-plugin)：通过公开仓库的 `dsh-plugin` Topic 自动发现，当前规则仍为每天 02:17 UTC 同步、两个同步周期后仍未收录才开 Issue。本次在 `2026-10-27T03:20:29Z` 核对执行时间后查询，确认本项目已自动收录，无需补交。
-- DSHFind 收录证据：[中文详情页](https://dshfind.com/zh/plugins/nickzhangcomes/dsh-doc-review)及[公开详情 API](https://api.dshfind.com/v1/plugins/nickzhangcomes/dsh-doc-review)均返回 HTTP 200。API 中 `full_name=nickzhangcomes/dsh-doc-review`，首次发现时间为 `2026-10-26T03:54:50.593Z`；按 owner 和包名查询也只返回该项目。当前 `is_plugin=null`、`install.cmd=null`，表示插件类型和安装探测尚未得出结果，不能据此宣称市场已验证或已支持一键安装。
-- [dshdesk 收录规范](https://plugin.dshdesk.com/policy)：检查 Topic、公开非归档且非 Fork 的仓库、`dsh.bundle.patch` 和 YAML 结构；[发布页](https://plugin.dshdesk.com/publish)说明每 2 小时同步。本次已通过其官方 GitHub 备用入口补充资料，无需重复填站内表单。
-
-本仓库已经包含可安装的 `dsh.bundle.patch`、顶层数组形式的 `cordis.patch.yml` 和预构建 `lib/`。审核描述应仅说明实际功能与验证范围，不宣称官方推荐或安全审计通过。
+所有匹配都以 **`nickzhangcomes/dsh-markup`**（曾用名 `nickzhangcomes/dsh-doc-review`）为准，避免混淆其他作者的同名旧项目。不宣称目录推荐或独立安全审计。

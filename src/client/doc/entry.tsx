@@ -13,6 +13,8 @@ import { SummaryRow } from './DocOverlay.tsx'
 
 /* eslint-disable @typescript-eslint/no-explicit-any -- runtime services are untyped */
 
+// Persisted draft references from versions <= 0.1.1 use this wire identifier.
+// Keep it stable across the public rename to dsh-markup.
 export const ATTACH_SOURCE = 'dsh-doc-review'
 
 const noopSub = (): (() => void) => () => {}

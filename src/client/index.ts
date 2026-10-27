@@ -124,7 +124,7 @@ export function apply(ctx: ClientContext): void {
       if (typeof off === 'function') ctx.effect(() => off, 'review: user-text rule ' + rule.id)
     }
   } catch (err) {
-    console.error('[dsh-doc-review] user-text rule registration failed:', err)
+    console.error('[dsh-markup] user-text rule registration failed:', err)
   }
   ctx.slots.inject('conversation.user.text.node', () =>
     ctx.slots.register({ name: 'conversation.user.text.node', key: REF_NODE_ID, priority: 100 }, RefMessage),
@@ -147,6 +147,6 @@ export function apply(ctx: ClientContext): void {
     })
     if (typeof off === 'function') ctx.effect(() => off, 'review: attach codec')
   } catch (err) {
-    console.error('[dsh-doc-review] reference codec registration failed:', err)
+    console.error('[dsh-markup] reference codec registration failed:', err)
   }
 }

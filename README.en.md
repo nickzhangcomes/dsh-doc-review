@@ -1,4 +1,6 @@
-# dsh-doc-review
+# DSH Markup · Inline annotations and document review
+
+Package: `dsh-markup`. Previously `dsh-doc-review`; renamed in 0.2.0.
 
 [简体中文](README.md) · English
 
@@ -10,9 +12,9 @@ Review DeepSeek Harness responses with inline annotations, document reading, com
 - Open a response in document mode to highlight passages and discuss them in comment threads. Ask the Agent to revise the document text, with undo support.
 - Bring highlights and discussions back to the main conversation as reference material attached to your next message, including the full revised document when its text has changed.
 
-![Inline annotations](https://raw.githubusercontent.com/nickzhangcomes/dsh-doc-review/v0.1.0/docs/screenshots/1-conversation.png)
+![Inline annotations](https://raw.githubusercontent.com/nickzhangcomes/dsh-markup/v0.1.0/docs/screenshots/1-conversation.png)
 
-![Document mode](https://raw.githubusercontent.com/nickzhangcomes/dsh-doc-review/v0.1.0/docs/screenshots/2-docmode.png)
+![Document mode](https://raw.githubusercontent.com/nickzhangcomes/dsh-markup/v0.1.0/docs/screenshots/2-docmode.png)
 
 ## Install
 
@@ -20,17 +22,31 @@ Requires DSH `>=0.2.1-rc.3`. The tested host version is `0.2.1-rc.3`; the deskto
 
 ```bash
 # Desktop
-dsh plugin --profile desktop add dsh-doc-review@latest
+dsh plugin --profile desktop add dsh-markup@latest
 
 # Web
-dsh plugin --profile web add dsh-doc-review@latest
+dsh plugin --profile web add dsh-markup@latest
 ```
 
 Use the profile name configured on your machine. Fully quit and reopen the desktop app after installation or an update; restart or reload your web host as appropriate.
 
-Prebuilt archives are also available from [GitHub Releases](https://github.com/nickzhangcomes/dsh-doc-review/releases). Uninstall with `dsh plugin --profile desktop remove dsh-doc-review`.
+Prebuilt archives are also available from [GitHub Releases](https://github.com/nickzhangcomes/dsh-markup/releases). Uninstall with `dsh plugin --profile desktop remove dsh-markup`.
 
 The plugin UI is currently in Chinese. It uses internal DSH interfaces, so future host releases may require a plugin update.
+
+## Upgrade from dsh-doc-review
+
+Use the same profile, remove the old package, and install the new name. Do not enable both packages together.
+
+```bash
+# Replace desktop with web for a web profile.
+dsh plugin --profile desktop remove dsh-doc-review
+dsh plugin --profile desktop add dsh-markup@latest
+```
+
+Fully quit and reopen the desktop app, or reload the web host. In the same DSH profile and browser storage environment, existing annotations, highlights, comment threads, text revisions, preferences, and pending reading summaries remain readable. The storage format and persisted reference identifiers are unchanged. Removing the old package does not clear these records; do not clear application/browser data. Sent conversation history remains managed by DSH.
+
+The GitHub repository, package, and documentation now use `dsh-markup`. The old GitHub URL redirects, and the old npm package is retained for historical versions and migration guidance. The desktop window-dragging fix from 0.1.1 is preserved.
 
 ## Data access and model calls
 

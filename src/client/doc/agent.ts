@@ -71,7 +71,7 @@ export class AgentChannel {
         const child: string = await sessions.fork({ sessionId: this.parentId })
         if (!child) throw new Error('无法创建文档模式会话')
         rememberChild(child)
-        this.handle = sessions.retain(child, { source: 'dsh-doc-review' })
+        this.handle = sessions.retain(child, { source: 'dsh-markup' })
         try {
           await this.handle?.ready
         } catch {
@@ -220,7 +220,7 @@ export async function retireChild(deps: AgentDeps, child: string): Promise<boole
         return true
       }
     } catch (err) {
-      if (attempt === 3) console.error('[dsh-doc-review] could not archive side session', child, err)
+      if (attempt === 3) console.error('[dsh-markup] could not archive side session', child, err)
     }
     await sleep(800 * (attempt + 1))
   }

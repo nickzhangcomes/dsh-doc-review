@@ -1,6 +1,8 @@
-# dsh-doc-review
+# DSH Markup · 对话批注与文档审阅
 
-简体中文 · [English](https://github.com/nickzhangcomes/dsh-doc-review/blob/main/README.en.md)
+包名：`dsh-markup`。原名 `dsh-doc-review`，从 0.2.0 起统一更名。
+
+简体中文 · [English](https://github.com/nickzhangcomes/dsh-markup/blob/main/README.en.md)
 
 把模型的长回复当成一份稿子来审：**原地批注、像读文档一样阅读、让 Agent 直接改正文**。一个 [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness)（dsh）插件。
 
@@ -18,7 +20,7 @@
 
 ### 对话模式：原地批注，一次发回
 
-![对话模式批注](https://raw.githubusercontent.com/nickzhangcomes/dsh-doc-review/v0.1.0/docs/screenshots/1-conversation.png)
+![对话模式批注](https://raw.githubusercontent.com/nickzhangcomes/dsh-markup/v0.1.0/docs/screenshots/1-conversation.png)
 
 - 选中回复里的任意文字，弹出工具栏：**评论**（主操作）、**认可**、**反对**（一键，理由可选）。
 - 批注以卡片形式显示在回复右侧，原文对应位置会被标出。
@@ -29,7 +31,7 @@
 
 点回复下方的 **以文档模式阅读**，回复会在 dsh 里打开成一份文档，不跳转。
 
-![文档模式](https://raw.githubusercontent.com/nickzhangcomes/dsh-doc-review/v0.1.0/docs/screenshots/2-docmode.png)
+![文档模式](https://raw.githubusercontent.com/nickzhangcomes/dsh-markup/v0.1.0/docs/screenshots/2-docmode.png)
 
 - **高亮**：标记讲得好的地方（再选中可以取消高亮）。
 - **评论**：评论以线程形式显示在右侧边栏。Agent 默认在线程里回复（开关会记住你的选择，也可以在评论里写 @Agent）。
@@ -41,11 +43,11 @@
 
 退出文档模式时会问你要不要把这次阅读带回主会话：
 
-![带回主会话](https://raw.githubusercontent.com/nickzhangcomes/dsh-doc-review/v0.1.0/docs/screenshots/3-exit.png)
+![带回主会话](https://raw.githubusercontent.com/nickzhangcomes/dsh-markup/v0.1.0/docs/screenshots/3-exit.png)
 
 选 **带回主会话** 后，阅读摘要（高亮、评论、讨论、修订后的全文）会作为参考材料附在输入框上方，随你的下一条消息一起发给 Agent：
 
-![摘要附在输入框上方](https://raw.githubusercontent.com/nickzhangcomes/dsh-doc-review/v0.1.0/docs/screenshots/4-bring-back.png)
+![摘要附在输入框上方](https://raw.githubusercontent.com/nickzhangcomes/dsh-markup/v0.1.0/docs/screenshots/4-bring-back.png)
 
 ## 安装
 
@@ -55,44 +57,51 @@
 
 ```bash
 # 桌面版
-dsh plugin --profile desktop add dsh-doc-review
+dsh plugin --profile desktop add dsh-markup
 
 # 网页版
-dsh plugin --profile web add dsh-doc-review
+dsh plugin --profile web add dsh-markup
 ```
 
 也可以从 GitHub 安装：
 
 ```bash
 # 桌面版
-dsh plugin --profile desktop add github:nickzhangcomes/dsh-doc-review
+dsh plugin --profile desktop add github:nickzhangcomes/dsh-markup
 
 # 网页版
-dsh plugin --profile web add github:nickzhangcomes/dsh-doc-review
+dsh plugin --profile web add github:nickzhangcomes/dsh-markup
 ```
 
-也可以从 [Releases](https://github.com/nickzhangcomes/dsh-doc-review/releases) 下载 `.tgz` 安装包，再运行：
+也可以从 [Releases](https://github.com/nickzhangcomes/dsh-markup/releases) 下载 `.tgz` 安装包，再运行：
 
 ```bash
-dsh plugin --profile desktop add file:/path/to/dsh-doc-review-0.1.1.tgz
+dsh plugin --profile desktop add file:/path/to/dsh-markup-0.2.0.tgz
 ```
 
 将 `/path/to/` 替换为安装包所在目录的完整路径。
 
 安装后**重启桌面版**（或刷新网页）。profile 名称以你本机为准，可以用 `ls ~/.dsh/profiles` 查看。
 
-卸载：`dsh plugin --profile desktop remove dsh-doc-review`
+卸载：`dsh plugin --profile desktop remove dsh-markup`
 
-## 0.1.1 更新
+## 0.2.0 更名与迁移
 
-- 修复安装插件后桌面窗口无法通过标题栏拖动、双击缩放的问题。批注浮层不再覆盖整扇窗口的原生拖动区域。
-- 文档模式顶部空白区域也支持拖动窗口；按钮和正文仍可正常点击、选择。
-
-已安装 0.1.0 的用户可以运行下面的命令，然后**完全退出并重新打开桌面版**：
+已安装旧包 `dsh-doc-review` 的用户，请在同一个 profile 中移除旧包，再安装新包，避免重复加载：
 
 ```bash
-dsh plugin --profile desktop add dsh-doc-review@latest
+# 桌面版；网页版请把 desktop 换成 web
+dsh plugin --profile desktop remove dsh-doc-review
+dsh plugin --profile desktop add dsh-markup@latest
 ```
+
+然后完全退出并重新打开桌面版（网页版刷新）。请先安装新包再继续编辑；不要同时启用新旧两个包。
+
+更名保留原有本地存储格式和引用标识。在同一 DSH profile、同一页面存储环境中，已有批注、高亮、评论、正文修订、设置和待发送阅读摘要可继续读取。卸载旧包不会清除这些记录；不要清空浏览器或应用数据。已发送的对话历史仍由 DSH 管理。
+
+GitHub 仓库、安装包和文档统一使用 `dsh-markup`；旧 GitHub 地址保留重定向。旧 npm 包仅作为历史版本和迁移入口保留。
+
+0.1.1 中的桌面拖动修复继续保留：批注浮层不覆盖原生拖动区域，文档模式顶部空白处可拖动窗口。
 
 ## 说明
 
@@ -118,7 +127,7 @@ dsh plugin --profile desktop add dsh-doc-review@latest
 
 ## 市场展示资料
 
-仓库根目录的 [screenshots.json](https://github.com/nickzhangcomes/dsh-doc-review/blob/main/screenshots.json) 声明了 4 张演示截图及其展示顺序。中英文简介、兼容性信息和收录申请草稿见 [市场投稿资料](https://github.com/nickzhangcomes/dsh-doc-review/blob/main/docs/marketplace/README.md)。
+仓库根目录的 [screenshots.json](https://github.com/nickzhangcomes/dsh-markup/blob/main/screenshots.json) 声明了 4 张演示截图及其展示顺序。中英文简介、兼容性信息和收录申请草稿见 [市场投稿资料](https://github.com/nickzhangcomes/dsh-markup/blob/main/docs/marketplace/README.md)。
 
 ## 本地开发
 
