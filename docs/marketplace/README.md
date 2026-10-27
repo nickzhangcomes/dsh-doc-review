@@ -1,6 +1,6 @@
 # 市场投稿资料
 
-以下是作者资料、投稿记录和自动发现说明。dsh-market 状态更新于 2026-10-26 06:50 UTC；其他市场保留 2026-10-25 的核对记录。提交申请不等于审核通过。
+以下是作者资料、投稿记录和自动发现说明。DSHFind 收录状态核对于 2026-10-27；dsh-market 保留 2026-10-26 06:50 UTC 的投稿记录，其他市场保留 2026-10-25 的核对记录。提交申请不等于审核通过。
 
 ## 投稿状态
 
@@ -11,9 +11,9 @@
 | DSHDesk | [Issue #92](https://github.com/majiayu000/dsh-plugin-registry/issues/92) 已提交 | 等审核/定时同步；也支持 Topic 自动发现 |
 | DeepSeek 1024 | [PR #690](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/690) 静态检查通过且已合并 | 网站目录同步中；npm 安装识别由市场自动采集 |
 | dsh-market | [PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552) 于 2026-10-26 正式提交，自动检查运行中 | 等维护者审核、合并；一次性自动投稿任务已完成并删除 |
-| DSHFind | 已具备公开仓库和 `dsh-plugin` Topic | 自动发现；两轮扫描后仍未收录才补交 Issue |
+| DSHFind | 已自动收录：[本项目中文详情页](https://dshfind.com/zh/plugins/nickzhangcomes/dsh-doc-review)，详情页及公开 API 均返回 HTTP 200 | 无需补交 Issue；插件类型和 npm 安装方式仍待目录识别 |
 
-以上申请均可由维护者的 GitHub 账号提交，目前没有必须作者亲自填表的剩余入口。dsh-market 延后投稿已完成。仍保留一次 DSHFind 检查：纽约时间 2026-10-26 23:20（北京 10 月 27 日 11:20），若精确仓库仍未收录，按当时规则去重后补交 Issue。剩余检查是作者本机 Codex 的一次性任务，执行结果以实际回执为准。
+以上申请均可由维护者的 GitHub 账号提交，目前没有必须作者亲自填表的剩余入口。dsh-market 延后投稿和 DSHFind 延迟检查均已完成，两项一次性任务均已删除。DSHFind 已查到精确仓库，本次没有创建 Issue；尚待审核的其他申请由对应目录维护者处理。
 
 市场中可能存在同名项目，应使用完整仓库标识 **`nickzhangcomes/dsh-doc-review`** 确认本插件，不能仅凭包名判断已收录。
 
@@ -74,7 +74,8 @@ English summary: Review DeepSeek Harness responses with inline annotations, docu
 
 ## 自动发现目录
 
-- [dshfind](https://github.com/hikariming/dshfind#submit-your-plugin)：通过公开仓库的 `dsh-plugin` Topic 自动发现，规则说明每天 02:17 UTC 同步。两个同步周期后仍未收录才开 Issue；本次已安排条件式补交。
+- [dshfind](https://github.com/hikariming/dshfind#submit-your-plugin)：通过公开仓库的 `dsh-plugin` Topic 自动发现，当前规则仍为每天 02:17 UTC 同步、两个同步周期后仍未收录才开 Issue。本次在 `2026-10-27T03:20:29Z` 核对执行时间后查询，确认本项目已自动收录，无需补交。
+- DSHFind 收录证据：[中文详情页](https://dshfind.com/zh/plugins/nickzhangcomes/dsh-doc-review)及[公开详情 API](https://api.dshfind.com/v1/plugins/nickzhangcomes/dsh-doc-review)均返回 HTTP 200。API 中 `full_name=nickzhangcomes/dsh-doc-review`，首次发现时间为 `2026-10-26T03:54:50.593Z`；按 owner 和包名查询也只返回该项目。当前 `is_plugin=null`、`install.cmd=null`，表示插件类型和安装探测尚未得出结果，不能据此宣称市场已验证或已支持一键安装。
 - [dshdesk 收录规范](https://plugin.dshdesk.com/policy)：检查 Topic、公开非归档且非 Fork 的仓库、`dsh.bundle.patch` 和 YAML 结构；[发布页](https://plugin.dshdesk.com/publish)说明每 2 小时同步。本次已通过其官方 GitHub 备用入口补充资料，无需重复填站内表单。
 
 本仓库已经包含可安装的 `dsh.bundle.patch`、顶层数组形式的 `cordis.patch.yml` 和预构建 `lib/`。审核描述应仅说明实际功能与验证范围，不宣称官方推荐或安全审计通过。
