@@ -28,7 +28,7 @@ English summary: Review DeepSeek Harness responses with inline annotations, docu
 | deepseekharnessplugins.com | [PR #40](https://github.com/cccakeee/awesome-dsh-plugins/pull/40) | 已在同一 PR 更新新名和固定 Git 安装来源，解决与最新 main 的冲突；9 项测试通过，待合并 |
 | DSHDesk | [Issue #92](https://github.com/majiayu000/dsh-plugin-registry/issues/92)，旧名已上线 | [更名资料已回复](https://github.com/majiayu000/dsh-plugin-registry/issues/92#issuecomment-6446777443)，待更新生产条目 |
 | DeepSeek 1024 | [原 PR #690](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/690)，已合并 | [更名 PR #729](https://github.com/imsai-sh/awesome-deepseek-harness-plugins/pull/729)，静态检查通过，待维护者审核 |
-| dsh-market | [原 PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552)，已合并 | [更名 PR #9913](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9913)，本地条目校验和 GitHub 两项自动检查通过，待审核 |
+| dsh-market | [原 PR #9552](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9552)，已合并 | [更名 PR #9913](https://github.com/awesome-dsh-plugin/awesome-dsh-plugin/pull/9913) 已于 2026-10-27 17:31 UTC 合并，目录源码已更新为新名 |
 | DSHFind | [旧名条目](https://dshfind.com/zh/plugins/nickzhangcomes/dsh-doc-review)，已自动发现 | [迁移 Issue #58](https://github.com/hikariming/dshfind/issues/58)，请求维护者保留历史数据并添加旧 URL 重定向 |
 
 原两项一次性投稿任务 `dsh-market` 和 `dshfind` 均已完成并删除。更名申请不重复增加第二个功能相同的条目；具体是否上线以各市场实际记录为准。

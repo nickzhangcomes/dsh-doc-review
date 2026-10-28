@@ -22,7 +22,7 @@ Requires DSH `>=0.2.1-rc.3`. The tested host version is `0.2.1-rc.3`; the deskto
 
 For Desktop, use **Plugins → Add plugin** and enter `dsh-markup`, a GitHub URL, or the full path to a release archive. The desktop CLI commands below require the CLI supplied by the desktop app; if your CLI says the `desktop` profile is managed by Electron, use the in-app installer.
 
-**Publication status (2026-10-27):** The 0.2.0 archive is available on [GitHub Releases](https://github.com/nickzhangcomes/dsh-markup/releases/tag/v0.2.0). The new npm package is awaiting publisher reauthentication; use the release archive or GitHub installation until npm publication completes. The commands below apply after publication.
+Install from [npm](https://www.npmjs.com/package/dsh-markup):
 
 ```bash
 # Desktop
