@@ -1,12 +1,12 @@
 # DSH Markup 市场资料与更名记录
 
-2026-10-27：本项目由 `dsh-doc-review` 更名为 **`dsh-markup`**，展示名为 **DSH Markup · 对话批注与文档审阅**。这是同一项目的延续，旧 GitHub 地址重定向到新仓库。新版本为 `0.2.0`；GitHub Release 与本地构建已完成，npm 发布等待重新登录，目录更名申请已提交；提交不等于市场已上线新名。
+2026-10-27：本项目由 `dsh-doc-review` 更名为 **`dsh-markup`**，展示名为 **DSH Markup · 对话批注与文档审阅**。这是同一项目的延续，旧 GitHub 地址重定向到新仓库。新版本为 `0.2.0`；GitHub Release 与 npm 均已发布，本机新版已验收，旧 npm 包已添加迁移提示。目录更名申请已提交，其中 dsh-market 已合并，其余以各市场审核结果为准。
 
 ## 项目资料
 
 - 源码：https://github.com/nickzhangcomes/dsh-markup
-- 新 npm 包：https://www.npmjs.com/package/dsh-markup（0.2.0 尚未发布，等待 npm 重新登录）
-- 原 npm 包：`dsh-doc-review@0.1.1`，新包发布确认后标注迁移提示。
+- 新 npm 包：https://www.npmjs.com/package/dsh-markup（0.2.0 已发布，latest 已指向 0.2.0）
+- 原 npm 包：`dsh-doc-review` 的历史版本均已添加 deprecated 迁移提示，仍保留可下载。
 - 许可证：MIT。
 - 宿主声明：DSH `>=0.2.1-rc.3`。旧版已在 macOS DSH 0.2.1-rc.3 验证桌面拖动；Windows、Linux 未独立验证。
 - 包含 `dsh.bundle.patch`、顶层数组格式的 `cordis.patch.yml` 和预构建 `lib/`。
@@ -18,7 +18,7 @@
 
 English summary: Review DeepSeek Harness responses with inline annotations, document reading, comment threads, and text revisions, then bring a reading summary back to the main conversation.
 
-新安装命令：`dsh plugin --profile desktop add dsh-markup@latest`；网页 profile 将 `desktop` 换成 `web`。已装旧包请先按 README 的迁移步骤处理，避免新旧包同时启用。
+桌面版在「插件 → 添加插件」输入 `dsh-markup`；网页版命令为 `dsh plugin --profile web add dsh-markup@latest`。桌面 CLI 需使用桌面版提供的入口。已装旧包请先按 README 的迁移步骤处理，避免新旧包同时启用。
 
 ## 原收录记录与更名进度
 
@@ -46,3 +46,7 @@ English summary: Review DeepSeek Harness responses with inline annotations, docu
 ## 本机更名验收
 
 2026-10-27：web 和 desktop profile 均已安装 `dsh-markup@0.2.0`，旧包不再列为依赖。桌面详情显示新名称、版本和 `1 total · 1 running`，原会话可见文档模式入口。桌面图形安装器等待网络未完成，改由该应用自带的插件管理接口、同一 pnpm 版本从本地缓存安装成功，保留供应链校验、兼容性检查和激活流程。
+
+## npm 发布核验
+
+`dsh-markup@0.2.0` 已完成公开发布。匿名下载的 npm 安装包为 40,561 字节，SHA-1 为 `eed5e8223a6c9213f9a7c9fe8d493b2cfb2e1150`，与 GitHub Release 安装包一致；注册表的 `latest` 指向 0.2.0。旧包各历史版本的公开元数据已确认包含新包名与迁移链接。六处市场投稿及 Release 已补齐 npm 发布结果。

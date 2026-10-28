@@ -50,7 +50,7 @@ dsh plugin --profile desktop add dsh-markup@latest
 
 Fully quit and reopen the desktop app, or reload the web host. In the same DSH profile and browser storage environment, existing annotations, highlights, comment threads, text revisions, preferences, and pending reading summaries remain readable. The storage format and persisted reference identifiers are unchanged. Removing the old package does not clear these records; do not clear application/browser data. Sent conversation history remains managed by DSH.
 
-The GitHub repository, package, and documentation now use `dsh-markup`. The old GitHub URL redirects, and the old npm package is retained for historical versions and migration guidance. The desktop window-dragging fix from 0.1.1 is preserved.
+The GitHub repository, package, and documentation now use `dsh-markup`. The old GitHub URL redirects, and the old npm package is marked deprecated with a migration link while historical versions remain available. The desktop window-dragging fix from 0.1.1 is preserved.
 
 ## Data access and model calls
 
